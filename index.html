@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wedding Quotation · Studio 85</title>
+  <meta name="description" content="Wedding photography & cinematography quotation for Sowndharya by Studio 85." />
+  <meta property="og:title" content="Wedding Quotation · Studio 85" />
+  <meta property="og:description" content="Wedding photography & cinematography quotation for Sowndharya." />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/hero.jpg" />
+  <script>
+    (function (d) {
+      d.classList.add('js');
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('fx');
+    })(document.documentElement);
+  </script>
+  <style>
+    :root {
+      --c-muted: #ababab;
+      --c-mid: #7f7f7f;
+      --c-strong: #616161;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Poppins', system-ui, sans-serif;
+      --col: 440px;
+      --pad: 53px;
+      --ease: cubic-bezier(.22, .61, .36, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #fff; }
+    body {
+      font-family: var(--sans);
+      font-weight: 500;
+      color: var(--c-muted);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    p { margin: 0; }
+    img { display: block; }
+
+    .col { width: 100%; max-width: var(--col); margin: 0 auto; }
+
+    /* ---------- Landing ---------- */
+    .intro {
+      height: 355px;
+      padding-top: 133px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .intro__studio { font-size: 15.283px; line-height: 1.5; }
+    .intro__title {
+      margin-top: 78px;
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 32.002px;
+      line-height: 1.333;
+    }
+    .intro__for { margin-top: 14px; font-weight: 300; font-size: 15.283px; line-height: 1.5; }
+
+    .js .intro > * {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: rise .95s var(--ease) forwards;
+    }
+    .js .intro__studio { animation-delay: .1s; }
+    .js .intro__title  { animation-delay: .25s; }
+    .js .intro__for    { animation-delay: .4s; }
+
+    /* Static fallback (no JS / reduced motion) */
+    .hero {
+      position: relative;
+      height: 601px;
+      overflow: hidden;
+    }
+    .hero__load { position: absolute; inset: 0; }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 48% center;
+    }
+    .js .hero__load {
+      opacity: 0;
+      animation: heroIn 1.25s var(--ease) .3s forwards;
+    }
+
+    /* Scroll scene: image grows + zooms, intro fades out, content slides over */
+    .fx .landing {
+      --pin: 70vh;
+      position: relative;
+      height: calc(200vh + var(--pin));
+    }
+    .fx .stage {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+    @supports (height: 100svh) {
+      .fx .landing { --pin: 70svh; height: calc(200svh + var(--pin)); }
+      .fx .stage { height: 100svh; }
+    }
+    .fx .intro { position: relative; z-index: 0; will-change: opacity, transform; }
+    .fx .hero {
+      position: absolute;
+      inset: 0;
+      height: auto;
+      z-index: 1;
+      clip-path: inset(355px 0 0 0);
+      will-change: clip-path;
+    }
+    .fx .hero img {
+      position: absolute;
+      left: 0; top: 0;
+      width: 1000px;
+      height: auto;
+      max-width: none;
+      transform-origin: 0 0;
+      will-change: transform;
+    }
+    .fx .sheet {
+      position: relative;
+      z-index: 2;
+      background: #fff;
+      margin-top: -100vh;
+    }
+    @supports (height: 100svh) { .fx .sheet { margin-top: -100svh; } }
+
+    /* ---------- Content ---------- */
+    .content { padding: 40px var(--pad) 40px; }
+
+    .lead {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 20.094px;
+      line-height: 1.333;
+    }
+
+    .h {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--c-strong);
+    }
+    .sub {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--c-mid);
+    }
+    .body { font-size: 14px; line-height: 1.5; }
+    .body .reg { font-weight: 400; }
+    .contact a { color: var(--c-strong); text-decoration: none; white-space: nowrap; }
+
+    .pkg-group { display: flex; flex-direction: column; gap: 18px; margin-top: 24px; }
+    .pkg-rows  { display: flex; flex-direction: column; gap: 12px; }
+    .pkg-row {
+      display: flex;
+      align-items: center;
+      gap: 42px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .pkg-row__role { width: 145px; flex-shrink: 0; }
+
+    .vbar { display: block; flex: none; margin: 0 -0.5px; overflow: visible; }
+    .dash {
+      display: block;
+      width: 314px;
+      max-width: 100%;
+      height: 1px;
+      overflow: visible;
+    }
+
+    .total { display: flex; flex-direction: column; gap: 24px; }
+    .total__price { font-size: 26.824px; line-height: 1.5; color: var(--c-strong); }
+
+    .addon {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      width: 332px;
+      max-width: 100%;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .addon .reg { font-weight: 400; }
+    .addon > :nth-child(even) { text-align: right; }
+
+    .mt-24 { margin-top: 24px; }
+    .mt-14 { margin-top: 14px; }
+
+    /* ---------- Footer ---------- */
+    .footer {
+      height: 401px;
+      padding-top: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .marquee {
+      width: 100%;
+      height: 226.563px;
+      overflow: hidden;
+    }
+    .marquee__track {
+      display: flex;
+      width: max-content;
+      animation: marquee 45s linear infinite;
+    }
+    .marquee__track img {
+      width: 333px;
+      height: 333px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .marquee__track img:nth-child(3n) { width: 334px; height: 334px; }
+    .footer__thanks {
+      margin-top: 40.4px;
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 20.094px;
+      line-height: 1.333;
+    }
+
+    /* ---------- Reveal on scroll ---------- */
+    .js [data-reveal] {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .9s var(--ease), transform .9s var(--ease);
+      transition-delay: var(--d, 0s);
+    }
+    .js [data-reveal].is-in { opacity: 1; transform: none; }
+
+    @keyframes rise   { to { opacity: 1; transform: none; } }
+    @keyframes heroIn { to { opacity: 1; transform: none; } }
+    @keyframes marquee { to { transform: translateX(-25%); } }
+
+    @media (max-width: 439px) {
+      :root { --pad: 24px; }
+      .pkg-row { gap: 28px; }
+    }
+
+    @media (min-width: 768px) {
+      html:not(.fx) .hero { height: min(85vh, 900px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .js .intro > *, .js .hero__load, .js [data-reveal] {
+        animation: none; transition: none; opacity: 1; transform: none;
+      }
+      .marquee { overflow-x: auto; }
+      .marquee__track { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Landing -->
+  <header class="landing">
+    <div class="stage">
+      <div class="col intro" id="intro">
+        <p class="intro__studio">Studio 85</p>
+        <h1 class="intro__title" style="margin-bottom:0">Wedding Quotation</h1>
+        <p class="intro__for">For Sowndharya</p>
+      </div>
+      <div class="hero" id="hero" aria-hidden="true">
+        <div class="hero__load">
+          <img src="assets/hero.jpg" alt="" width="2400" height="1600" fetchpriority="high" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <div class="sheet">
+  <main class="col content">
+    <p class="lead">we offer Curated Talents with<br />highly Creative Portfolios,<br />with 10+ years of experience</p>
+
+    <section style="margin-top:48px">
+      <h2 class="h" style="margin:0">PACKAGE DETAILS</h2>
+
+      <div class="pkg-group">
+        <p class="sub">Wedding</p>
+        <div class="pkg-rows">
+          <div class="pkg-row">
+            <p class="pkg-row__role">2 photographers</p>
+            <svg class="vbar" width="1" height="18" viewBox="0 0 1 18" aria-hidden="true"><path d="M0.25 0V18" stroke="#ABABAB" stroke-width="0.5" fill="none" /></svg>
+            <p>1 Traditional<br />1 Candid</p>
+          </div>
+          <svg class="dash" width="314" height="1" viewBox="0 0 314 1" preserveAspectRatio="none" aria-hidden="true"><path d="M0.25 0V4.90625M0.25 314V309.094M0.25 14.7188V24.5312M0.25 34.3438V44.1562M0.25 53.9688V63.7812M0.25 73.5938V83.4062M0.25 93.2188V103.031M0.25 112.844V122.656M0.25 132.469V142.281M0.25 152.094V161.906M0.25 171.719V181.531M0.25 191.344V201.156M0.25 210.969V220.781M0.25 230.594V240.406M0.25 250.219V260.031M0.25 269.844V279.656M0.25 289.469V299.281" stroke="#ABABAB" stroke-width="0.5" fill="none" transform="translate(0 0.5) rotate(-90)" /></svg>
+          <div class="pkg-row">
+            <p class="pkg-row__role">2 cinematographers</p>
+            <svg class="vbar" width="1" height="18" viewBox="0 0 1 18" aria-hidden="true"><path d="M0.25 0V18" stroke="#ABABAB" stroke-width="0.5" fill="none" /></svg>
+            <p>1 Traditional<br />1 Candid</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-group">
+        <p class="sub">Reception</p>
+        <div class="pkg-rows">
+          <div class="pkg-row">
+            <p class="pkg-row__role">2 photographers</p>
+            <svg class="vbar" width="1" height="18" viewBox="0 0 1 18" aria-hidden="true"><path d="M0.25 0V18" stroke="#ABABAB" stroke-width="0.5" fill="none" /></svg>
+            <p>1 Traditional<br />1 Candid</p>
+          </div>
+          <svg class="dash" width="314" height="1" viewBox="0 0 314 1" preserveAspectRatio="none" aria-hidden="true"><path d="M0.25 0V4.90625M0.25 314V309.094M0.25 14.7188V24.5312M0.25 34.3438V44.1562M0.25 53.9688V63.7812M0.25 73.5938V83.4062M0.25 93.2188V103.031M0.25 112.844V122.656M0.25 132.469V142.281M0.25 152.094V161.906M0.25 171.719V181.531M0.25 191.344V201.156M0.25 210.969V220.781M0.25 230.594V240.406M0.25 250.219V260.031M0.25 269.844V279.656M0.25 289.469V299.281" stroke="#ABABAB" stroke-width="0.5" fill="none" transform="translate(0 0.5) rotate(-90)" /></svg>
+          <div class="pkg-row">
+            <p class="pkg-row__role">2 cinematographers</p>
+            <svg class="vbar" width="1" height="18" viewBox="0 0 1 18" aria-hidden="true"><path d="M0.25 0V18" stroke="#ABABAB" stroke-width="0.5" fill="none" /></svg>
+            <p>1 Traditional<br />1 Candid</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:47px">
+      <h2 class="h" style="margin:0">DELIVERABLES</h2>
+      <div class="body mt-14">
+        <p>Photo Album - 50 pages</p>
+        <p>Full HD / 4K Video <span class="reg">(Cost varies based on customer preference)</span></p>
+        <p>Soft Copies of All Photographs</p>
+        <p>1 Pen Drive with Edited Photos &amp; Videos</p>
+      </div>
+    </section>
+
+    <section style="margin-top:57px">
+      <h2 class="h" style="margin:0">COMPLIMENTARY</h2>
+      <div class="body mt-14">
+        <p>One converted reel</p>
+        <p>Calendar</p>
+        <p>Mini Album</p>
+      </div>
+    </section>
+
+    <section class="total" style="margin-top:64px">
+      <h2 class="h" style="margin:0">TOTAL COST</h2>
+      <svg class="dash" width="314" height="1" viewBox="0 0 314 1" preserveAspectRatio="none" aria-hidden="true"><path d="M0.25 0V4.90625M0.25 314V309.094M0.25 14.7188V24.5312M0.25 34.3438V44.1562M0.25 53.9688V63.7812M0.25 73.5938V83.4062M0.25 93.2188V103.031M0.25 112.844V122.656M0.25 132.469V142.281M0.25 152.094V161.906M0.25 171.719V181.531M0.25 191.344V201.156M0.25 210.969V220.781M0.25 230.594V240.406M0.25 250.219V260.031M0.25 269.844V279.656M0.25 289.469V299.281" stroke="#ABABAB" stroke-width="0.5" fill="none" transform="translate(0 0.5) rotate(-90)" /></svg>
+      <p class="total__price">2,00,000/-</p>
+      <svg class="dash" width="314" height="1" viewBox="0 0 314 1" preserveAspectRatio="none" aria-hidden="true"><path d="M0.25 0V4.90625M0.25 314V309.094M0.25 14.7188V24.5312M0.25 34.3438V44.1562M0.25 53.9688V63.7812M0.25 73.5938V83.4062M0.25 93.2188V103.031M0.25 112.844V122.656M0.25 132.469V142.281M0.25 152.094V161.906M0.25 171.719V181.531M0.25 191.344V201.156M0.25 210.969V220.781M0.25 230.594V240.406M0.25 250.219V260.031M0.25 269.844V279.656M0.25 289.469V299.281" stroke="#ABABAB" stroke-width="0.5" fill="none" transform="translate(0 0.5) rotate(-90)" /></svg>
+    </section>
+
+    <section style="margin-top:63px">
+      <h2 class="h" style="margin:0">ADD - On</h2>
+      <div class="addon mt-14">
+        <p>Event Reel</p><p>9000/-</p>
+        <p class="reg">(with same day delivery)</p><p></p>
+        <p>Drone</p><p>10000/-</p>
+        <p>Full event BTS coverage</p><p>10000/-</p>
+      </div>
+    </section>
+
+    <section style="margin-top:43px">
+      <h2 class="h" style="margin:0">EXCLUSIONS</h2>
+      <p class="body mt-14">Travel expense &amp; accommodation are to be provided separately.</p>
+    </section>
+
+    <section style="margin-top:61px">
+      <h2 class="h" style="margin:0">EXTRAS</h2>
+      <div class="body mt-14">
+        <p>Extra leaf in the album : ₹600 per leaf</p>
+        <p>Cost per extra Shoot hours other than wedding &amp; Reception : ₹1000</p>
+      </div>
+    </section>
+
+    <section style="margin-top:48px">
+      <p class="body contact">For more details contact - <a href="tel:+917356151613">7356151613</a></p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="marquee">
+      <div class="marquee__track">
+        <img src="assets/strip-1.jpg" alt="" /><img src="assets/strip-2.jpg" alt="" /><img src="assets/strip-3.jpg" alt="" />
+        <img src="assets/strip-1.jpg" alt="" /><img src="assets/strip-2.jpg" alt="" /><img src="assets/strip-3.jpg" alt="" />
+        <img src="assets/strip-1.jpg" alt="" /><img src="assets/strip-2.jpg" alt="" /><img src="assets/strip-3.jpg" alt="" />
+        <img src="assets/strip-1.jpg" alt="" /><img src="assets/strip-2.jpg" alt="" /><img src="assets/strip-3.jpg" alt="" />
+      </div>
+    </div>
+    <p class="footer__thanks">Thank you</p>
+  </footer>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var fx = root.classList.contains('fx');
+
+      // ---- Fade-in content as it scrolls into view (each block, staggered) ----
+      var items = document.querySelectorAll('main .lead, main section > *, .marquee, .footer__thanks');
+      items.forEach(function (el) { el.setAttribute('data-reveal', ''); });
+
+      if ('IntersectionObserver' in window && fx) {
+        var io = new IntersectionObserver(function (entries) {
+          var i = 0;
+          entries.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            e.target.style.setProperty('--d', (i++ * 0.1) + 's');
+            e.target.classList.add('is-in');
+            io.unobserve(e.target);
+          });
+        }, { rootMargin: '0px 0px -20px 0px', threshold: 0 });
+        items.forEach(function (el) { io.observe(el); });
+      } else {
+        items.forEach(function (el) { el.classList.add('is-in'); });
+      }
+
+      if (!fx) return;
+
+      // ---- Landing scroll scene ----
+      var landing = document.querySelector('.landing');
+      var stage = landing.querySelector('.stage');
+      var intro = document.getElementById('intro');
+      var hero = document.getElementById('hero');
+      var img = hero.querySelector('img');
+      var RATIO = 1.5, BASE = 1000;   // hero.jpg is 3:2; img is laid out at 1000px wide and scaled
+      var INTRO_H = 355;              // height of the text block above the photo (from Figma)
+      var ticking = false;
+
+      function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+      function smooth(t) { return t * t * (3 - 2 * t); }
+
+      function update() {
+        ticking = false;
+        var vw = stage.clientWidth;
+        var vh = stage.clientHeight;
+        var pin = landing.offsetHeight - 2 * vh;
+        var y = -landing.getBoundingClientRect().top;
+        if (y > pin + vh * 1.05) return;   // scene fully covered by content
+
+        var p1 = clamp(y / pin);           // photo grows to fill the screen
+        var p2 = clamp((y - pin) / vh);    // content slides up over the photo
+        var e = smooth(p1);
+
+        // Photo's top edge rises from below the intro text to the top of the screen
+        var t0 = Math.min(INTRO_H, vh * 0.6);
+        var top = t0 * (1 - e);
+        hero.style.clipPath = 'inset(' + top.toFixed(1) + 'px 0 0 0)';
+
+        // Cover the visible area, then zoom in; drift up slowly while content passes (parallax)
+        var h = vh - top;
+        var zoom = 1 + 0.22 * e + 0.1 * p2;
+        var w = Math.max(vw, h * RATIO) * zoom;
+        var x = (vw - w) / 2;
+        var ty = top + (h - w / RATIO) / 2 - p2 * vh * 0.08;
+        img.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + ty.toFixed(1) + 'px,0) scale(' + (w / BASE).toFixed(4) + ')';
+
+        // Intro text is pushed up and fades out
+        intro.style.opacity = Math.max(0, 1 - p1 * 1.8).toFixed(3);
+        intro.style.transform = 'translate3d(0,' + (-t0 * 0.55 * e).toFixed(1) + 'px,0)';
+      }
+
+      function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      update();
+    })();
+  </script>
+</body>
+</html>
