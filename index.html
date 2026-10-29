@@ -46,8 +46,8 @@
 
     /* ---------- Landing ---------- */
     .intro {
-      height: 355px;
-      padding-top: 133px;
+      height: 310px;
+      padding-top: 90px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -112,7 +112,7 @@
       inset: 0;
       height: auto;
       z-index: 1;
-      clip-path: inset(355px 0 0 0);
+      clip-path: inset(310px 0 0 0);
       will-change: clip-path;
     }
     .fx .hero img {
@@ -419,7 +419,7 @@
       var hero = document.getElementById('hero');
       var img = hero.querySelector('img');
       var RATIO = 1.5, BASE = 1000;   // hero.jpg is 3:2; img is laid out at 1000px wide and scaled
-      var INTRO_H = 355;              // height of the text block above the photo (from Figma)
+      var INTRO_H = 310;              // height of the text block above the photo (from Figma)
       var ticking = false;
 
       function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
