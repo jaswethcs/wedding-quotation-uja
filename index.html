@@ -75,7 +75,7 @@
     /* Static fallback (no JS / reduced motion) */
     .hero {
       position: relative;
-      height: 601px;
+      height: min(601px, 136.6vw);
       overflow: hidden;
     }
     .hero__load { position: absolute; inset: 0; }
@@ -442,8 +442,10 @@
         var top = t0 * (1 - e);
         hero.style.clipPath = 'inset(' + top.toFixed(1) + 'px 0 0 0)';
 
-        // Cover the visible area, then zoom in; drift up slowly while content passes (parallax)
-        var h = vh - top;
+        // Cover the Figma frame proportion (440×601, scaled to width) so the crop is the same on every
+        // device, growing to cover the full screen as the photo rises; then zoom in and drift (parallax)
+        var hd = Math.min(vw, 440) * 601 / 440;
+        var h = Math.max(hd, vh - top);
         var zoom = 1 + 0.22 * e + 0.1 * p2;
         var w = Math.max(vw, h * RATIO) * zoom;
         var x = (vw - w) / 2;
